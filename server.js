@@ -4,6 +4,9 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import router from "./routes/employeeRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import cookieParser from "cookie-parser";
+
 
 dotenv.config();
 connectDB();
@@ -13,13 +16,15 @@ const app = express();
 
 app.use(
     cors({
-        origin: 'http://localhost:5173', // ✅ Allow requests only from your React app
-        methods: ['GET', 'POST', 'PUT', 'DELETE'], // Optional: restrict allowed methods
+        origin: 'http://localhost:5173', 
+        credentials : true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], 
 
     })
 );
 
 app.use(express.json());
+app.use(cookieParser());
 app.use('/',router);
 
 
@@ -29,6 +34,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/employees", employeeRoutes);
+app.use("/api/admin", adminRoutes);
 
 
 app.use((req, res) => {
