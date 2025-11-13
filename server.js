@@ -5,7 +5,7 @@ import connectDB from "./config/db.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import cookieParser from "cookie-parser";
-import { verifyAdmin } from "./middleware/authMiddleware.js";
+
 
 dotenv.config();
 connectDB();
@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://ems-frontend7.onrender.com',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   })
