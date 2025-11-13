@@ -11,14 +11,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
-app.use(
-  cors({
-    origin: 'https://ems-frontend7.onrender.com',
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  })
-);
+app.use(cors())
 
 app.use(express.json());
 app.use(cookieParser());
