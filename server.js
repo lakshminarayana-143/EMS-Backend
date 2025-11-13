@@ -5,13 +5,13 @@ import connectDB from "./config/db.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import cookieParser from "cookie-parser";
-
+app.use(cors())
 
 dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors())
+
 
 app.use(express.json());
 app.use(cookieParser());
