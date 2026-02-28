@@ -16,7 +16,7 @@ const app = express();
 // ---------------------------------------------------
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://ems-frontend7.onrender.com"
+  "https://ems-backend-4.onrender.com"
 ];
 
 app.use((req, res, next) => {
