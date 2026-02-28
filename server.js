@@ -15,7 +15,7 @@ const app = express();
 // ✅ FIXED — Bullet-proof CORS for Render + Cookies
 // ---------------------------------------------------
 const allowedOrigins = [
-  "http://localhost:5174",
+  "http://localhost:5173",
   "https://ems-frontend7.onrender.com"
 ];
 
