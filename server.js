@@ -16,7 +16,7 @@ const app = express();
 // ---------------------------------------------------
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://employee-management-system-7bz0.onrender.com"
+  "https://employee-management-frontend.onrender.com"
 ];
 
 app.use((req, res, next) => {
